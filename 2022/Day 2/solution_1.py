@@ -20,5 +20,6 @@ def solution(path):
         running_score += score(player_A, player_B)
     return running_score
 
-print(solution('example_input.txt'))
-print(solution('input.txt'))
+if __name__ == "__main__":
+    print(solution('example_input.txt'))
+    print(solution('input.txt'))
