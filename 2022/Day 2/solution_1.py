@@ -1,12 +1,14 @@
 def score(A, B):
-    beats = {"A" : "Y", "B": "Z", "C": "X"}
-    scores = {"X": 1, "Y": 2, "Z": 3}
-    if B == beats[A]:
-        return 6 + scores[B]
-    elif "ABC".index(A) == "XYZ".index(B):
-        return 3 + scores[B]
+    # 0 for rock, 1 for paper, 2 for scissors
+    choice_a = 'ABC'.index(A)
+    choice_b = 'XYZ'.index(B)
+    initial_score = choice_b + 1
+    if choice_a == choice_b:
+        return initial_score + 3
+    elif (choice_a + 1) % 3 == choice_b:
+        return initial_score + 6
     else:
-        return scores[B]
+        return initial_score
 
 def solution(path):
     with open(path) as f:
